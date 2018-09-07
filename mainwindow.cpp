@@ -40,13 +40,13 @@ MainWindow::MainWindow()
  buttonContainer->setMinimumHeight(100);
  buttonContainer->setMinimumWidth(200);
  QHBoxLayout *buttonLayout = new QHBoxLayout(buttonContainer);
- this->simulationParameters = &(SimulationParameters());
+ this->simulationData = &(SimulationData());
  tabWidget = new QTabWidget(container);
  tabWidget->addTab(new StartTab(this),"Start");
- tabWidget->addTab(new SquadTab(this),"Oddziały");
- tabWidget->addTab(new MapTab(this),"Mapa");
- tabWidget->addTab(new PlacementTab(this),"Rozmieszczenie");
- tabWidget->addTab(new ParametersTab(this,this->simulationParameters),"Parametry");
+ tabWidget->addTab(new SquadTab(this, this->simulationData->getRedArmy()), &(this->simulationData->getBlueArmy()),"Oddziały");
+ tabWidget->addTab(new MapTab(this, (this->simulationData->getArea()),"Mapa");
+ tabWidget->addTab(new PlacementTab(this,(this->simulationData->getPlacement()) ),"Rozmieszczenie");
+ tabWidget->addTab(new ParametersTab(this,(this->simulationData->getParameters()),"Parametry");
  connect(tabWidget, SIGNAL(currentChanged(int)), this, SLOT(onTabChanged(int)));
  previousButton = new QPushButton("Wstecz",buttonContainer);
  nextButton = new QPushButton("Dalej",buttonContainer);
