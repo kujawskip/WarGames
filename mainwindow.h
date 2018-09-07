@@ -8,12 +8,30 @@
 #include "maptab.h"
 #include "placementtab.h"
 
+
+
 QT_BEGIN_NAMESPACE
 class QAction;
 class QMenu;
 class QPlainTextEdit;
 class QSessionManager;
 QT_END_NAMESPACE
+
+class Area {
+};
+class Placement {
+};
+class Army {
+};
+class SimulationData {
+    Area area;
+    Army redArmy;
+    Army blueArmy;
+    Placement placement;
+    SimulatedParameters parameters;
+    
+};
+
 
 //! [0]
 class MainWindow : public QMainWindow
@@ -29,7 +47,7 @@ public slots:
 private:
     Q_OBJECT
     QPushButton* previousButton, *nextButton;
-    SimulationParameters* simulationParameters;
+    SimulationData* simulationData;
     QTabWidget* tabWidget;
     void changeTab(int dIndex);
 
