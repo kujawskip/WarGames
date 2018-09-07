@@ -8,6 +8,6 @@ class ParametersTab : public QWidget
     Q_OBJECT
 
 public:
-    explicit ParametersTab(QWidget *parent = 0, SimulationParameters* parameters = 0);
+    explicit ParametersTab(QWidget *parent, SimulationParameters& parameters);
 };
 #endif PARAMETERSTAB_H
