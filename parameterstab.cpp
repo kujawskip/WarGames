@@ -3,7 +3,7 @@
 #include "parameterstab.h"
 #include "labeledslider.h"
 #include "helper.h"
-ParametersTab::ParametersTab(QWidget *parent, SimulationParameters* parameters)
+ParametersTab::ParametersTab(QWidget *parent, SimulationParameters& parameters)
     : QWidget(parent)
 {
 
@@ -11,7 +11,7 @@ ParametersTab::ParametersTab(QWidget *parent, SimulationParameters* parameters)
 
     std::vector<int> accSliderValuesVector;
     initVectorFromArray<int>(accSliderValuesVector, accuracyValues);
-    LabeledSlider* accuracySlider = new LabeledSlider(this, accSliderValuesVector,[=](int a) {parameters->setAccuracy(a);},  "Celność",""," %");
+    LabeledSlider* accuracySlider = new LabeledSlider(this, accSliderValuesVector,[=](int a) {parameters.setAccuracy(a);},  "Celność",""," %");
     mainLayout->addStretch(1);
     mainLayout->addWidget(accuracySlider);
 
