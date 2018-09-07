@@ -1,7 +1,7 @@
 #ifndef PLACEMENTTAB_CPP
 #define PLACEMENTTAB_CPP
 #include "placementtab.h"
-PlacementTab::PlacementTab(QWidget *parent)
+PlacementTab::PlacementTab(QWidget *parent, Placement& placement)
     : QWidget(parent)
 {
 
