@@ -59,6 +59,16 @@ SimulatedParameters& SimulationData::getParameters()
 {
     return this->parameters;
 }
+
+SimulationData::SimulationData()
+{
+    this->parameters = Parameters();
+    this->redArmy = Army();
+    this->blueArmy = Army();
+    this->area = Area();
+    this->placement = Placement();
+}
+
 //! [0]
 class MainWindow : public QMainWindow
 {
