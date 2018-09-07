@@ -11,7 +11,7 @@
 
 
 QT_BEGIN_NAMESPACE
-class QAction;
+aclass QAction;
 class QMenu;
 class QPlainTextEdit;
 class QSessionManager;
@@ -29,10 +29,36 @@ class SimulationData {
     Army blueArmy;
     Placement placement;
     SimulatedParameters parameters;
-    
+    public:
+    Area& getArea();
+    Army& getRedArmy();
+    Army& getBlueArmy();
+    Placement& getPlacement();
+    SimulatedParameters& getParameters();
 };
 
+Area& SimulationData::getArea() {
+return this->area;
+}
 
+Army& SimulationData::getRedArmy()
+{
+    return this->redArmy;
+}
+
+Army& SimulationData::getBlueArmy()
+{
+    return this->blueArmy;
+}
+
+Placement& SimulationData::getPlacement() {
+return this->placement;
+}
+
+SimulatedParameters& SimulationData::getParameters()
+{
+    return this->parameters;
+}
 //! [0]
 class MainWindow : public QMainWindow
 {
