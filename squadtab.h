@@ -1,7 +1,7 @@
 #ifndef MAPTAB_H
 #define MAPTAB_H
-#include <QtWidgets>
-#include "army.h"
+#include "armygroup.h"
+
 class SquadTab : public QWidget
 {
     Q_OBJECT

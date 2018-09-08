@@ -9,7 +9,20 @@ HEADERS       = mainwindow.h \
     placementtab.h \
     parameters.h \
     labeledslider.h \
-    helper.h
+    area.h \
+    army.h \
+    simulationdata.h \
+    placement.h \
+    vector_from_array.h \
+    jsonwrapper.h \
+    unit.h \
+    armygroup.h \
+    ability.h \
+    attack.h \
+    simulatedunit.h \
+    point.h \
+    squad.h \
+    labeledlineedit.h
 SOURCES       = main.cpp \
                 mainwindow.cpp \
     main.cpp \
@@ -20,8 +33,12 @@ SOURCES       = main.cpp \
     maptab.cpp \
     placementtab.cpp \
     labeledslider.cpp \
-    simulatedparameters.cpp \
-    helper.cpp
+    simulationdata.cpp \
+    parameters.cpp \
+    vector_from_array.cpp \
+    jsonwrapper.cpp \
+    point.cpp \
+    labeledlinedit.cpp
 #! [0]
 RESOURCES     = application.qrc \
     application.qrc

@@ -6,6 +6,7 @@ LabeledSlider::LabeledSlider(QWidget *parent, std::vector<int> values,std::funct
     this->values = std::vector<int>(values);
     this->prefix = std::string(prefix);
     this->suffix = std::string(suffix);
+    this->callBack = callBack;
     QLabel* labelWidget = new QLabel(this);
     labelWidget->setText(QString::fromStdString(label));
     slider = new QSlider(Qt::Horizontal,this);

@@ -43,10 +43,10 @@ MainWindow::MainWindow()
  this->simulationData = &(SimulationData());
  tabWidget = new QTabWidget(container);
  tabWidget->addTab(new StartTab(this),"Start");
- tabWidget->addTab(new SquadTab(this, this->simulationData->getRedArmy()), &(this->simulationData->getBlueArmy()),"Oddziały");
- tabWidget->addTab(new MapTab(this, (this->simulationData->getArea()),"Mapa");
- tabWidget->addTab(new PlacementTab(this,(this->simulationData->getPlacement()) ),"Rozmieszczenie");
- tabWidget->addTab(new ParametersTab(this,(this->simulationData->getParameters()),"Parametry");
+ tabWidget->addTab(new SquadTab(this, this->simulationData->getRedArmy(), this->simulationData->getBlueArmy()),"Oddziały");
+ tabWidget->addTab(new MapTab(this, this->simulationData->getArea()),"Mapa");
+ tabWidget->addTab(new PlacementTab(this,this->simulationData->getPlacement() ),"Rozmieszczenie");
+ tabWidget->addTab(new ParametersTab(this,this->simulationData->getParameters()),"Parametry");
  connect(tabWidget, SIGNAL(currentChanged(int)), this, SLOT(onTabChanged(int)));
  previousButton = new QPushButton("Wstecz",buttonContainer);
  nextButton = new QPushButton("Dalej",buttonContainer);

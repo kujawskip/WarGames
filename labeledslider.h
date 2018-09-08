@@ -12,6 +12,7 @@ private:
     std::string suffix;
     QSlider* slider;
     QLabel* valueLabel;
+    std::function<void(int)> callBack;
     std::string getLabel();
 public slots:
     void onValueChanged(int value);

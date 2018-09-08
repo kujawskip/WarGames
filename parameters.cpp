@@ -27,3 +27,19 @@ SimulationParameters::SimulationParameters()
     setSpeed(0);
     setSeed("");
 }
+
+void SimulationParameters::read(QJsonObject &object)
+{
+    tryRead(accuracy, object, "accuracy");
+    tryRead(speed,object,"speed");
+    tryRead(damage,object,"damage");
+    tryRead(seed, object, "seed");
+
+}
+
+template<>
+void asInstanceOf<SimulationParameters>(SimulationParameters& value,QJsonValue object)
+{
+    auto readObject = object.toObject();
+    value.read(readObject);
+}
