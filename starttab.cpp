@@ -1,4 +1,4 @@
-#ifndef STARTTAB_CPP
+        #ifndef STARTTAB_CPP
 #define STARTTAB_CPP
 #include "starttab.h"
 StartTab::StartTab(QWidget *parent)

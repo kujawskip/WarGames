@@ -4,6 +4,8 @@
 
 #include "mainwindow.h"
 #include "parameters.h"
+#include "unitprovider.h"
+#include "jsonwrapper.h"
 void MainWindow::onTabChanged(int tabIndex) {
     this->previousButton->setEnabled(tabIndex > 0);
     this->nextButton->setEnabled(tabIndex < (this->tabWidget->count()-1));
@@ -31,6 +33,10 @@ MainWindow::MainWindow()
 
 //! [1] //! [2]
 {
+
+ auto doc = loadJson(":/units.json");
+
+ UnitProvider::getInstance().load(doc.object());
  auto container = new QGroupBox;
  container->setMinimumWidth(500);
  container->setMinimumHeight(500);
@@ -40,13 +46,15 @@ MainWindow::MainWindow()
  buttonContainer->setMinimumHeight(100);
  buttonContainer->setMinimumWidth(200);
  QHBoxLayout *buttonLayout = new QHBoxLayout(buttonContainer);
- this->simulationData = &(SimulationData());
+
  tabWidget = new QTabWidget(container);
+
  tabWidget->addTab(new StartTab(this),"Start");
- tabWidget->addTab(new SquadTab(this, this->simulationData->getRedArmy(), this->simulationData->getBlueArmy()),"Oddziały");
- tabWidget->addTab(new MapTab(this, this->simulationData->getArea()),"Mapa");
- tabWidget->addTab(new PlacementTab(this,this->simulationData->getPlacement() ),"Rozmieszczenie");
- tabWidget->addTab(new ParametersTab(this,this->simulationData->getParameters()),"Parametry");
+
+ tabWidget->addTab(new SquadTab(this, this->simulationData.getRedArmy(), this->simulationData.getBlueArmy()),"Oddziały");
+ tabWidget->addTab(new MapTab(this, this->simulationData.getArea()),"Mapa");
+ tabWidget->addTab(new PlacementTab(this,this->simulationData.getPlacement() ),"Rozmieszczenie");
+ tabWidget->addTab(new ParametersTab(this,this->simulationData.getParameters()),"Parametry");
  connect(tabWidget, SIGNAL(currentChanged(int)), this, SLOT(onTabChanged(int)));
  previousButton = new QPushButton("Wstecz",buttonContainer);
  nextButton = new QPushButton("Dalej",buttonContainer);

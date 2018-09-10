@@ -7,9 +7,12 @@ class ArmyGroup : public QWidget
 private:
     Q_OBJECT
     Army army;
+    QHBoxLayout* layout;
 public:
-    explicit ArmyGroup(QWidget *parent, Army& army);
-    void ArmyUpdated();
+    ArmyGroup(QWidget *parent, Army& army, QString name);
+    void AddUnit(std::string key);
+    void RemoveUnit(std::string key);
+    
 };
 
 #endif // ARMYGROUP_H

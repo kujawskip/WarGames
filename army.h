@@ -3,15 +3,18 @@
 #include <vector>
 #include <unit.h>
 #include "jsonwrapper.h"
-
+#include <map>
 class Army
 {
+    std::map<std::string, int > soldierIds;
 
-    std::vector<std::string> soldierIds;
 public:
+
     void add(Unit unit);
     void remove(Unit unit);
     void read(QJsonObject& object);
+    int count(Unit unit);
+    Army();
 };
 
 template<>

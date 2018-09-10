@@ -1,6 +1,7 @@
 #ifndef MAPTAB_CPP
 #define MAPTAB_CPP
 #include "maptab.h"
+
 MapTab::MapTab(QWidget *parent, Area& area)
     : QWidget(parent)
 {

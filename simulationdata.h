@@ -11,11 +11,12 @@ class SimulationData {
     Placement placement;
     SimulationParameters parameters;
     public:
+
     Area& getArea();
     Army& getRedArmy();
     Army& getBlueArmy();
     Placement& getPlacement();
     SimulationParameters& getParameters();
-    SimulationData();
+
 };
 #endif // SIMULATIONDATA_H

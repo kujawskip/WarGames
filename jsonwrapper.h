@@ -1,7 +1,13 @@
 #ifndef JSONWRAPPER_H
 #define JSONWRAPPER_H
 #include <QJsonObject>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QFile>
 #include <vector>
+QJsonDocument loadJson(QString fileName);
+
+
 template <typename T>
 bool isInstanceOf(QJsonValue value)
 {
@@ -41,12 +47,15 @@ template<typename T>
 bool tryReadArray(std::vector<T>& value, QJsonObject object, QString key)
 {
     bool result = true;
+
     if(object.contains(key) && object[key].isArray())
     {
+
         QJsonArray valuesArray = object[key].toArray();
         for (int index = 0; index < valuesArray.size(); ++index) {
                    T item;
                    auto isInstance = isInstanceOf<T>(valuesArray[index]);
+
                    if(isInstance)
                    {
                        asInstanceOf<T>(item, valuesArray[index]);

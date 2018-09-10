@@ -22,11 +22,4 @@ SimulationParameters& SimulationData::getParameters()
     return this->parameters;
 }
 
-SimulationData::SimulationData()
-{
-    this->parameters = SimulationParameters();
-    this->redArmy = Army();
-    this->blueArmy = Army();
-    this->area = Area();
-    this->placement = Placement();
-}
+

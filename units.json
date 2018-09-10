@@ -1,0 +1,59 @@
+{
+"units":
+    [
+        {
+            "name": "Strażnik",
+            "icon": "guard.png",
+            "damage": 11,
+            "firerate": 2,
+            "movement": 1,
+            "endurance": 10,
+            "range": 1
+        },
+        {
+            "name": "Czołg",
+            "icon": "tank.png",
+            "damage": 40,
+            "movement": 2,
+            "firerate": 1,
+            "endurance": 40,
+            "range": 2,
+            "abilities":
+            [
+            {
+                "type": "armor",
+                "value": 60
+            }
+            ]
+
+
+        },
+        {
+            "name": "Zwiadowca",
+            "icon": "scout.png",
+            "damage": 5,
+            "firerate": 1,
+            "movement": 5,
+            "endurance": 10,
+            "range": 4
+        },
+        {
+            "name": "Snajper",
+            "icon": "sniper.png",
+            "damage":20,
+            "firerate": 1,
+            "movement": 1,
+            "endurance": 10,
+            "range": 12,
+            "abilities":
+            [
+                {
+                    "type": "accuracyBoost",
+                    "value": 60
+                }
+            ]
+        }
+
+
+]
+}

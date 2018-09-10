@@ -1,4 +1,5 @@
 #include "jsonwrapper.h"
+
 template<>
 bool isInstanceOf<int>(QJsonValue object )
 {
@@ -38,4 +39,17 @@ template<>
 void asInstanceOf<std::string>(std::string& value, QJsonValue object)
 {
     value = object.toString().toStdString();
+}
+
+QJsonDocument loadJson(QString fileName)
+{
+   QFile jsonFile(fileName);
+   jsonFile.open(QFile::ReadOnly);
+   auto byteArray = jsonFile.readAll();
+
+   QJsonParseError error;
+   auto result = QJsonDocument().fromJson(byteArray,&error);
+   /*fprintf(stderr,"%d\n",error.offset);
+   fprintf(stderr,"%s\n",error.errorString().toStdString().c_str());*/
+   return result;
 }

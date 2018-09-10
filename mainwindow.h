@@ -31,7 +31,7 @@ public slots:
 private:
     Q_OBJECT
     QPushButton* previousButton, *nextButton;
-    SimulationData* simulationData;
+    SimulationData simulationData;
     QTabWidget* tabWidget;
     void changeTab(int dIndex);
 
