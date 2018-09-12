@@ -1,18 +1,19 @@
-#include "groupunitlabel.h"
+#include "placementgrouplabel.h"
 #include <QPixmap>
-GroupUnitLabel::GroupUnitLabel(QWidget* parent,Unit& unit, std::function<void(std::string)> onClick, std::function<void(std::string)> onRightClick, int count) : QWidget(parent)
+PlacementGroupLabel::PlacementGroupLabel(QWidget* parent,Unit& unit, std::function<void(std::string)> onClick)
+
 {
 
     QHBoxLayout *mainLayout = new QHBoxLayout;
     this->onClick = onClick;
     this->UnitImage = new QLabel(this);
-    this->onRightClick = onRightClick;
+
     QPixmap pixmap;
     pixmap.convertFromImage(unit.getIcon());
 
     this->UnitImage->setPixmap(pixmap.scaled(40,80,Qt::KeepAspectRatio));
     this->UnitCount = new QLabel(this);
-    this->count = count;
+    this->count = 0;
     this->unitName = unit.getName();
     updateLabel();
     mainLayout->addStretch(1);
@@ -22,28 +23,31 @@ GroupUnitLabel::GroupUnitLabel(QWidget* parent,Unit& unit, std::function<void(st
     setLayout(mainLayout);
 }
 
-void GroupUnitLabel::updateLabel()
+void PlacementGroupLabel::updateLabel()
 {
     this->UnitCount->setText(QString::fromStdString(std::to_string(count)));
 }
 
-void GroupUnitLabel::mousePressEvent(QMouseEvent *event)
+void PlacementGroupLabel::mousePressEvent(QMouseEvent *event)
 {
     //if somebody presses both buttons, both callbacks will activate
-    if(event->button() == Qt::LeftButton)
-    {
-        onClick(this->unitName);
-        count++;
-    }
-    if(event->button() == Qt::RightButton)
-    {
-        onRightClick(this->unitName);
-        if(count>=1) count--;
-    }
+    onClick(this->unitName);
+
+}
+
+void PlacementGroupLabel::unitAdded()
+{
+    count++;
     updateLabel();
 }
 
-void GroupUnitLabel::armyUpdated(int count)
+void PlacementGroupLabel::unitRemoved()
+{
+    count--;
+    updateLabel();
+}
+
+void PlacementGroupLabel::setCount(int count)
 {
     count = count;
     updateLabel();

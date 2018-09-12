@@ -10,7 +10,7 @@ class SimulationData {
     Army blueArmy;
     Placement placement;
     SimulationParameters parameters;
-    public:
+public:
 
     Area& getArea();
     Army& getRedArmy();

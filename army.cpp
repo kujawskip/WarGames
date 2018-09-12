@@ -25,7 +25,7 @@ int Army::count(Unit unit)
 {
     auto key = unit.getName();
     int result = getOrSet(soldierIds,key,0);
-    printf("%s %d\n",key.c_str(), result);
+
     return result;
 }
 

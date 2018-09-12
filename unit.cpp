@@ -58,3 +58,8 @@ int Unit::getRange()
     return range;
 }
 
+std::vector<Ability> Unit::getAbilities()
+{
+    return abilities;
+}
+

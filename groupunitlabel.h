@@ -14,5 +14,6 @@ void updateLabel();
 public:
     GroupUnitLabel(QWidget* parent, Unit& unit, std::function<void(std::string)> onClick, std::function<void(std::string)> onRightClick, int count);
     void mousePressEvent(QMouseEvent* event);
+    void armyUpdated(int count);
 };
 #endif // GROUPUNITLABEL_H

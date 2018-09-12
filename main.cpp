@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     parser.addVersionOption();
     parser.addPositionalArgument("file", "The file to open.");
     parser.process(app);
-    fprintf(stderr,"main\n");
+
     MainWindow mainWin;
 
     mainWin.show();

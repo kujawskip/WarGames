@@ -119,7 +119,7 @@ std::vector<int> base64_decode(const std::string &encoded_string)
   std::vector<int> result;
   for(int i = 0; i < decoded.size();i++)
   {
-      char c = decoded[i];
+      unsigned char c = decoded[i];
       for(int j = 0; j<4; j++)
       {
           result.push_back(c%4);

@@ -8,7 +8,7 @@
 #include "maptab.h"
 #include "placementtab.h"
 #include "simulationdata.h"
-
+#include "simulationwindow.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -33,8 +33,10 @@ private:
     QPushButton* previousButton, *nextButton;
     SimulationData simulationData;
     QTabWidget* tabWidget;
+    PlacementTab* placementTab;
     void changeTab(int dIndex);
-
+    void showSimulation();
+    SimulationWindow* window;
 };
 //! [0]
 

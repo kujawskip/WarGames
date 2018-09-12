@@ -1,10 +1,24 @@
 #ifndef SIMULATEDUNIT_H
 #define SIMULATEDUNIT_H
-typedef Squad;
+#include "attack.h"
+#include "unit.h"
 class SimulatedUnit {
-    Unit& BaseUnit;
+
     int HP;
     int Id;
-    Squad& squad;
-}
+    int Army;
+    Unit BaseUnit;
+public:
+    Unit getUnit();
+    int getHP();
+    int getID();
+    int getArmy();
+    SimulatedUnit getCopy();
+    void apply(Attack& attack);
+    SimulatedUnit();
+    SimulatedUnit(Unit BaseUnit,int id,int army);
+    void multiplyHP(int multiplier);
+
+
+};
 #endif // SIMULATEDUNIT_H

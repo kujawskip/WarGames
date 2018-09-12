@@ -37,6 +37,25 @@ void SimulationParameters::read(QJsonObject &object)
 
 }
 
+int SimulationParameters::getAccuracy()
+{
+    return accuracy;
+}
+
+int SimulationParameters::getDamage()
+{
+    return damage;
+}
+
+int SimulationParameters::getSpeed()
+{
+    return speed;
+}
+std::string SimulationParameters::getSeed()
+{
+    return seed;
+}
+
 template<>
 void asInstanceOf<SimulationParameters>(SimulationParameters& value,QJsonValue object)
 {

@@ -21,6 +21,7 @@ int getRange();
 int getDamage();
 int getMovement();
 int getFirerate();
+std::vector<Ability> getAbilities();
 QImage getIcon();
 void setName(std::string name);
 void setEndurance(int value);

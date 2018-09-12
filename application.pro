@@ -34,7 +34,16 @@ HEADERS       = mainwindow.h \
     jsonmap.h \
     base64.h \
     arearenderer.h \
-    maplist.h
+    maplist.h \
+    areaandunitsrenderer.h \
+    placementgrouplabel.h \
+    placementgroup.h \
+    simulationwindow.h \
+    simulation.h \
+    simulationsnapshot.h \
+    simulationrenderer.h \
+    simulatedunitdetails.h \
+    simulationunitgroup.h
 SOURCES       = main.cpp \
                 mainwindow.cpp \
     main.cpp \
@@ -66,7 +75,19 @@ SOURCES       = main.cpp \
     jsonmap.cpp \
     base64.cpp \
     arearenderer.cpp \
-    maplist.cpp
+    maplist.cpp \
+    areaandunitsrenderer.cpp \
+    placementgrouplabel.cpp \
+    placementgroup.cpp \
+    placement.cpp \
+    simulationwindow.cpp \
+    simulationrenderer.cpp \
+    simulation.cpp \
+    simulatedunit.cpp \
+    simulationsnapshot.cpp \
+    attack.cpp \
+    simulatedunitdetails.cpp \
+    simulationunitgroup.cpp
 #! [0]
 RESOURCES     = application.qrc \
     application.qrc \

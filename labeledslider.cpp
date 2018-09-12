@@ -36,5 +36,6 @@ std::string LabeledSlider::getLabel()
 
 void LabeledSlider::onValueChanged(int value)
 {
+    callBack(getValue());
     this->valueLabel->setText(QString::fromStdString(this->getLabel()));
 }

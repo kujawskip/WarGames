@@ -11,5 +11,6 @@
         <file>images/tank.png</file>
         <file>images/scout.png</file>
         <file>images/sniper.png</file>
+        <file>maps.json</file>
     </qresource>
 </RCC>

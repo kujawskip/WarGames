@@ -1,0 +1,10 @@
+#ifndef ATTACK_H
+#define ATTACK_H
+#include "simulatedunit.h"
+class Attack {
+    int attacker;
+    int target;
+    int accuracy;
+    int damage;
+};
+#endif // ATTACK_H
